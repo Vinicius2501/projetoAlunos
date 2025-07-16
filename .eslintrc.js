@@ -21,9 +21,10 @@ module.exports = {
       'error',
       'ignorePackages',
       {
-        js: 'always',
-        mjs: 'always',
+        js: 'never',
+        mjs: 'never',
       },
     ],
+    'no-param-reassign': ['error', { props: false }],
   },
 };
