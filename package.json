@@ -2,7 +2,6 @@
   "name": "projetoalunos",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js"
@@ -17,9 +16,13 @@
     "eslint-import-resolver-node": "^0.3.9",
     "eslint-plugin-import": "^2.32.0",
     "nodemon": "^3.1.10",
+    "sequelize-cli": "^6.6.3",
     "sucrase": "^3.35.0"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "mariadb": "^3.4.4",
+    "sequelize": "^6.37.7"
   }
 }
