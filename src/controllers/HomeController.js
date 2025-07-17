@@ -1,8 +1,8 @@
 class HomeController {
-  index(req,resp){
+  index(req, resp) {
     resp.status(200).json({
       testeJson: true,
-    })
+    });
   }
 }
 

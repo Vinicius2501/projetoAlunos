@@ -1,17 +1,6 @@
 import User from '../models/User';
 
 class UserController {
-  async store(req, resp) {
-    try {
-      const novoUser = await User.create(req.body);
-      return resp.json(novoUser);
-    } catch (e) {
-      return resp.status(400).json({ errors: e.errors.map((err) => err.message) });
-    }
-  }
-
-  // Index
-
   async index(req, resp) {
     try {
       const users = await User.findAll({ attributes: ['id', 'nome', 'email'] });
@@ -20,8 +9,6 @@ class UserController {
       return resp.status(400).json({ errors: e.errors.map((err) => err.message) });
     }
   }
-
-  // Show
 
   async show(req, resp) {
     try {
@@ -36,7 +23,14 @@ class UserController {
     }
   }
 
-  // Update
+  async store(req, resp) {
+    try {
+      const novoUser = await User.create(req.body);
+      return resp.json(novoUser);
+    } catch (e) {
+      return resp.status(400).json({ errors: e.errors.map((err) => err.message) });
+    }
+  }
 
   async update(req, resp) {
     try {
@@ -61,7 +55,6 @@ class UserController {
     }
   }
 
-  // Delete
   async delete(req, resp) {
     try {
       const { id } = req.params;
