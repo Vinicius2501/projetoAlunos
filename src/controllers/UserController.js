@@ -14,7 +14,7 @@ class UserController {
 
   async index(req, resp) {
     try {
-      const users = await User.findAll();
+      const users = await User.findAll({ attributes: ['id', 'nome', 'email'] });
       return resp.json(users);
     } catch (e) {
       return resp.status(400).json({ errors: e.errors.map((err) => err.message) });
@@ -27,7 +27,7 @@ class UserController {
     try {
       const { id } = req.params;
       if (id) {
-        const user = await User.findByPk(id);
+        const user = await User.findByPk(id, { attributes: ['id', 'nome', 'email'] });
         return resp.status(200).json(user);
       }
       return resp.status(400).json({ errors: ['Id não informado'] });
@@ -40,7 +40,7 @@ class UserController {
 
   async update(req, resp) {
     try {
-      const { id } = req.params;
+      const id = req.userId;
       if (!id) {
         return resp.status(400).json({ errors: ['Id não informado.'] });
       }
@@ -54,7 +54,7 @@ class UserController {
 
       await User.update(req.body, { where: { id } });
 
-      const userUpdate = await User.findByPk(id);
+      const userUpdate = await User.findByPk(id, { attributes: ['id', 'nome', 'email'] });
       return resp.status(200).json(userUpdate);
     } catch (e) {
       return resp.status(400).json({ errors: e.errors.map((err) => err.message) });
