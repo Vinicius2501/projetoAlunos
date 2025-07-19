@@ -57,6 +57,7 @@ export default class Aluno extends Model {
       },
     }, {
       sequelize,
+      timestamps: true,
     });
     return this;
   }

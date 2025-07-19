@@ -40,10 +40,9 @@ export default class User extends Model {
           },
         },
       },
-      created_at: Sequelize.DATE,
-      updated_at: Sequelize.DATE,
     }, {
       sequelize,
+      timestamps: true,
     });
 
     this.addHook('beforeSave', async (user) => {
