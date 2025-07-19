@@ -1,6 +1,6 @@
 [PT-BR]
 
-# ProjetoAlunos
+# 🎓 ProjetoAlunos
 
 Este repositório contém uma **API RESTful para gestão de alunos**, com cadastro de usuários e autenticação JWT via Bearer Token.
 
@@ -46,7 +46,7 @@ A aplicação implementa uma estrutura moderna de back-end com Express e Sequeli
 ## Instalação e Execução
 
 1. Clone o repositório:
-   git clone https://github.com/seuusuario/projetoalunos.git
+   git clone https://github.com/Vinicius2501/projetoalunos.git
 
 2. Acesse o diretório do projeto:
     cd projetoalunos
@@ -87,7 +87,7 @@ TOKEN_SECRET={Token para assinatura}
 TOKEN_EXPIRATION={Tempo de expiração}
 
 ---
-Projeto desenvolvido como parte dos estudos no curso de Full Stack com JS/TS.
+> Projeto desenvolvido como parte dos estudos no curso de Full Stack com JS/TS.
 
 
 
@@ -95,7 +95,7 @@ Projeto desenvolvido como parte dos estudos no curso de Full Stack com JS/TS.
 
 [EN]
 
-# ProjetoAlunos
+# 🎓 ProjetoAlunos
 
 This repository contains a **RESTful API for student management**, featuring user registration and JWT authentication via Bearer Token.
 
@@ -141,7 +141,7 @@ The application implements a modern back-end architecture using Express and Sequ
 ## Installation & Execution
 
 1. Clone the repository:
-   git clone https://github.com/yourusername/projetoalunos.git
+   git clone https://github.com/Vinicius2501/projetoalunos.git
 
 2. Navigate into the project directory:
     cd projetoalunos
@@ -151,7 +151,7 @@ The application implements a modern back-end architecture using Express and Sequ
 
 4. Create and configure the .env file using .env.example as reference.
 
-5.Run the project:
+5. Run the project:
     npm run dev
 
 ---
@@ -178,4 +178,4 @@ DATABASE={Database name}
 TOKEN_SECRET={JWT secret key}
 TOKEN_EXPIRATION={Token expiration time}
 
-This project was developed as part of my studies in Full Stack JavaScript/TypeScript development.
+> This project was developed as part of my studies in Full Stack JavaScript/TypeScript development.

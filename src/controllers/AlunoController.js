@@ -9,7 +9,7 @@ class AlunoController {
         order: [['id', 'DESC'], [Foto, 'id', 'DESC']],
         include: {
           model: Foto,
-          attributes: ['url', 'nome_arquivo'],
+          attributes: ['nome_arquivo'],
         },
       });
       return resp.json(alunos);
@@ -28,7 +28,7 @@ class AlunoController {
         order: [[Foto, 'id', 'DESC']],
         include: {
           model: Foto,
-          attributes: ['url', 'nome_arquivo'],
+          attributes: ['nome_arquivo'],
         },
       });
       if (!aluno) { return resp.status(404).json({ errors: ['Aluno não encontrado.'] }); }
