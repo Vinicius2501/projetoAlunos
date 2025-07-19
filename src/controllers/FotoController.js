@@ -10,8 +10,9 @@ class FotoController {
     return upload(req, resp, async (err) => {
       if (err) { return resp.status(400).json({ errors: [err.code] }); }
 
+      if (!req.file) { return resp.status(400).json({ errors: ['Arquivo não enviado.'] }); }
       const { originalname, filename } = req.file;
-      const { id } = req.params;
+      const id = req.body.aluno_id;
       if (!id) { return resp.status(400).json({ errors: ['Id não informado.'] }); }
 
       const aluno = await Aluno.findByPk(id);

@@ -4,6 +4,6 @@ import fotoController from '../controllers/FotoController';
 
 const router = new Router();
 
-router.post('/:id', loginRequired, fotoController.store);
+router.post('/', loginRequired, fotoController.store);
 
 export default router;
