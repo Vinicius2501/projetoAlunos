@@ -1,9 +1,17 @@
 import Aluno from '../models/Aluno';
+import Foto from '../models/Foto';
 
 class AlunoController {
   async index(req, resp) {
     try {
-      const alunos = await Aluno.findAll();
+      const alunos = await Aluno.findAll({
+        attributes: ['id', 'nome', 'sobrenome', 'email', 'idade', 'peso', 'altura'],
+        order: [['id', 'DESC'], [Foto, 'id', 'DESC']],
+        include: {
+          model: Foto,
+          attributes: ['nome_arquivo'],
+        },
+      });
       return resp.json(alunos);
     } catch (e) {
       return resp.status(400).json({ errors: e.errors.map((err) => err.message) });
@@ -15,7 +23,14 @@ class AlunoController {
       const { id } = req.params;
       if (!id) { return resp.status(401).json({ errors: ['Id não informado;'] }); }
 
-      const aluno = await Aluno.findByPk(id);
+      const aluno = await Aluno.findByPk(id, {
+        attributes: ['id', 'nome', ' sobrenome', 'email', 'idade', 'peso', 'altura'],
+        order: [[Foto, 'id', 'DESC']],
+        include: {
+          model: Foto,
+          attributes: ['nome_arquivo'],
+        },
+      });
       if (!aluno) { return resp.status(404).json({ errors: ['Aluno não encontrado.'] }); }
 
       return resp.status(200).json(aluno);
