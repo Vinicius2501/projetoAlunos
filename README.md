@@ -79,12 +79,22 @@ A aplicação implementa uma estrutura moderna de back-end com Express e Sequeli
 
 ## Estrutura .env
 DATABASE_HOST={Host do servidor}
+
 DATABASE_PORT={Porta do servidor}
+
 DATABASE_USERNAME={Usuário de acesso ao servidor}
+
 DATABASE_PWD={Senha de acesso ao servidor}
+
 DATABASE={Nome do banco de dados}
+
 TOKEN_SECRET={Token para assinatura}
+
 TOKEN_EXPIRATION={Tempo de expiração}
+
+APP_URL={URL do servidor}
+
+APP_PORT={Porta de acesso}
 
 ---
 > Projeto desenvolvido como parte dos estudos no curso de Full Stack com JS/TS.
@@ -171,11 +181,21 @@ The application implements a modern back-end architecture using Express and Sequ
 
 ## .env Structure
 DATABASE_HOST={Database host}
+
 DATABASE_PORT={Database port}
+
 DATABASE_USERNAME={Database username}
+
 DATABASE_PWD={Database password}
+
 DATABASE={Database name}
+
 TOKEN_SECRET={JWT secret key}
+
 TOKEN_EXPIRATION={Token expiration time}
+
+APP_URL={Server URL}
+
+APP_PORT={Access port}
 
 > This project was developed as part of my studies in Full Stack JavaScript/TypeScript development.
