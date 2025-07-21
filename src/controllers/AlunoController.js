@@ -6,7 +6,7 @@ class AlunoController {
     try {
       const alunos = await Aluno.findAll({
         attributes: ['id', 'nome', 'sobrenome', 'email', 'idade', 'peso', 'altura'],
-        order: [['id', 'DESC'], [Foto, 'id', 'DESC']],
+        order: [['id', 'DESC'], [{ model: Foto }, 'id', 'DESC']],
         include: {
           model: Foto,
           attributes: ['url', 'nome_arquivo'],
@@ -24,8 +24,8 @@ class AlunoController {
       if (!id) { return resp.status(401).json({ errors: ['Id não informado;'] }); }
 
       const aluno = await Aluno.findByPk(id, {
-        attributes: ['id', 'nome', ' sobrenome', 'email', 'idade', 'peso', 'altura'],
-        order: [[Foto, 'id', 'DESC']],
+        attributes: ['id', 'nome', 'sobrenome', 'email', 'idade', 'peso', 'altura'],
+        order: [['id', 'DESC'], [{ model: Foto }, 'id', 'DESC']],
         include: {
           model: Foto,
           attributes: ['url', 'nome_arquivo'],
