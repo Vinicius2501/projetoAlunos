@@ -24,7 +24,7 @@ class TokenController {
         },
       );
 
-      return resp.json({ token });
+      return resp.json({ token, user: { nome: user.nome, id, email } });
     } catch (e) {
       return resp.status(400).json({ errors: e.errors.map((err) => err.message) });
     }
